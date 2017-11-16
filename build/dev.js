@@ -3,7 +3,7 @@ var config = require('../config/webpack.dev.js')
 var webpackDevServer = require('webpack-dev-server')
 var port = 8080;
 config.entry.app.unshift(
-  "webpack-dev-server/client?http://localhost:" + port + "/",
+  "webpack-dev-server/client?http://" + process.env.IP + ":" + process.env.PORT + "/",
   "webpack/hot/dev-server"
 )
 
@@ -13,7 +13,8 @@ var server = new webpackDevServer(webpack(config), {
   quiet: false,
   noInfo: false,
   publicPath: config.output.publicPath,
-  stats: "minimal"
+  stats: "minimal",
+  disableHostCheck: true
 });
 
 server.listen(port, function(err) {

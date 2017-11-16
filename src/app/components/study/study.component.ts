@@ -81,7 +81,7 @@ export class StudyComponent implements OnInit {
    * Load OSM Map
    */
   public loadMap() {
-    this.layer = L.marker([ this.lat, this.lng ], {
+    /*this.layer = L.marker([ this.lat, this.lng ], {
      	icon: L.icon({
      		iconSize: [ 20, 35 ],
      		iconAnchor: [ 13, 0 ],
@@ -100,7 +100,7 @@ export class StudyComponent implements OnInit {
     	zoom: this.zoom,
     	center: L.latLng({ lat: this.lat, lng: this.lng }),
       zoomControl: false
-    };
+    };*/
   }
 
   /**

@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpModule }    from '@angular/http';
 
 // Plugins
-import { RoundProgressModule } from 'angular-svg-round-progressbar';
+// import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { LeafletModule } from '@asymmetrik/angular2-leaflet';
 
 // Configuration
@@ -34,7 +34,6 @@ import { ClientResolver } from './resolvers/client.resolver';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
-    RoundProgressModule,
     LeafletModule
   ],
   declarations: [
