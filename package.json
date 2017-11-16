@@ -1,7 +1,7 @@
 {
-  "name": "angular4-webpack",
+  "name": "ihome",
   "version": "1.0.0",
-  "description": "SUN",
+  "description": "IHOME",
   "scripts": {
     "start": "node build/dev.js --NODE_ENV=dev",
     "test": "karma start",
