@@ -1,0 +1,117 @@
+// _navbar.scss
+
+sun-app {
+  .navbar-default {
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    height: 67px;
+    margin-bottom: 0;
+
+    .container-fluid {
+      padding-right: 0;
+    }
+
+    .navbar-header {
+      .studies-list {
+        margin: 15px 0 0 15px;
+
+        select, button.valid, .icon {
+          float: left;
+          height: 32px;
+        }
+
+        select, .icon {
+          background-color: $third-color;
+        }
+
+        .icon {
+          width: 35px;
+          text-align: center;
+          color: #bdc2ca;
+          padding: 5px 0 0 0;
+          border-radius: 3px 0 0 3px;
+
+          i {
+            font-size: 22px;
+          }
+        }
+
+        select {
+          width: 250px;
+          border-radius: 0;
+          box-shadow: none;
+          border:0 none;
+          outline: 0;
+          font-weight: 500;
+          color: #7d7b7b;
+          font-size: 13px;
+          padding: 0;
+        }
+
+        button.valid {
+          width: 35px;
+          border: 0;
+          background-color: #bdc2ca;
+          color: white;
+          padding-top: 5px;
+          border-radius: 0 3px 3px 0;
+
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .navbar-right {
+      a {
+        i {
+          color: #979ca3;
+          font-size: 30px;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+
+      .new-study {
+        background-color: $fifth-color;
+        color: white;
+        border: none;
+        width: 150px;
+        margin: 15px 30px 0 0;
+
+        span {
+          margin-left: 15px;
+          top: 3px;
+        }
+      }
+
+      .person {
+        margin-top: 7px;
+        margin-left: 20px;
+
+        span {
+          float: left;
+          font-weight: 500;
+          padding-top: 15px;
+        }
+
+        .person-thumbnail {
+          float: right;
+          @include circle(50px);
+          text-align: center;
+          background: lightgrey;
+          margin-left: 10px;
+
+          i {
+            font-size: 47px;
+            color: $fourth-color;
+          }
+        }
+      }
+    }
+  }
+}

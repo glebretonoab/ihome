@@ -1,0 +1,82 @@
+<div class="wrapper">
+    <nav id="sidebar" [ngClass]="{'active': isActiveSidebar }">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-brand"></div>
+            <div class="sidebar-brand-mini"></div>
+        </div>
+
+        <!-- Sidebar Links -->
+        <div class="collapse-link">
+          <span *ngIf="!isActiveSidebar">Customer area</span>
+          <a (click)="isActiveSidebar = !isActiveSidebar;">
+            <i class="material-icons" *ngIf="!isActiveSidebar">chevron_left</i>
+            <i class="material-icons" *ngIf="isActiveSidebar">chevron_right</i>
+          </a>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu">
+                    <i class="material-icons">event_note</i>
+                    <span>Your studies</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">person</i>
+                    <span>Personal informations</span>
+                </a>
+                <a href="#pageSubmenu">
+                    <i class="material-icons">help_outline</i>
+                    <span>Need help ?</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+
+              <div class="navbar-header">
+                <div class="studies-list" *ngIf="studies">
+                  <div class="icon">
+                    <i class="material-icons">event_note</i>
+                  </div>
+                  <select class="form-control" (change)="studyChanged($event.target.value)">
+                    <option *ngFor="let study of studies"
+                      [value]="study.id"
+                      [attr.selected]="studyId==study.id ? true : null">
+                      {{study.title}}
+                    </option>
+                  </select>
+                  <button type="button" class="valid">
+                    <i class="material-icons">done</i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li>
+                        <button type="button" class="btn btn-default new-study">New study<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
+                      </li>
+                      <li><a href="#"><i class="material-icons">event_note</i></a></li>
+                      <li><a href="#"><i class="material-icons">person_outline</i></a></li>
+                      <li><a href="#"><i class="material-icons">help_outline</i></a></li>
+                      <li>
+                        <div class="person">
+                          <span>User</span>
+                          <div class="person-thumbnail">
+                            <i class="material-icons">person</i>
+                          </div>
+                        </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+      <router-outlet></router-outlet>
+    </div>
+</div>

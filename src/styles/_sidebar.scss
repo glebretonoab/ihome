@@ -1,0 +1,205 @@
+// _sidebar.scss
+
+sun-app {
+
+    #sidebar {
+      min-width: 210px;
+      max-width: 210px;
+      background-color: $primary-color;
+      color: #fff;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+
+      .sidebar-header {
+        .sidebar-brand {
+          background: url('../images/logo_engie.jpg') no-repeat center center $second-color;
+          background-size: 70%;
+          width: 210px;
+          height: 67px;
+        }
+
+        .sidebar-brand-mini {
+          display: none;
+          background: url('../images/logo_engie_small.jpg') no-repeat center center;
+          width: 80px;
+          height: 67px;
+        }
+      }
+
+      .collapse-link {
+        text-align: center;
+        height: 35px;
+
+        span {
+          float: left;
+          padding: 8px 15px;
+          font-size: 14px;
+          font-weight: 100;
+        }
+
+        a {
+          float: right;
+          background-color: #023661;
+          color: white;
+          font-size: 25px;
+          display: block;
+          width: 30px;
+          height: inherit;
+          padding-top: 3px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+
+      ul {
+        li {
+          a {
+            text-align: left;
+            padding: 10px 10px 10px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            color: #bbb7b7;
+
+            &:hover {
+              background: #3176ac;
+              text-decoration: none;
+            }
+
+            i {
+              position: absolute;
+              margin-top: -2px;
+            }
+
+            span {
+              margin-left: 32px;
+              padding: 5px 0;
+            }
+          }
+
+          &.active {
+            a {
+              color: white;
+              background: #76b3e3;
+            }
+          }
+        }
+      }
+
+      &.active {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+
+        ul {
+          li {
+            a {
+              padding: 15px 10px;
+              text-align: center;
+              font-size: 0.85em;
+
+              i {
+                  margin-right:  0;
+                  display: block;
+                  font-size: 30px;
+                  position: relative;
+              }
+
+              span {
+                display: none;
+              }
+            }
+          }
+
+          ul {
+            a {
+              padding: 10px !important;
+            }
+          }
+        }
+
+        .collapse-link {
+          height: 25px;
+
+          a {
+            width: 100%;
+            height: inherit;
+            padding-top: 0px;
+
+            i {
+              font-size: 25px;
+            }
+          }
+        }
+
+        .sidebar-header {
+          .sidebar-brand {
+            display: none;
+          }
+
+          .sidebar-brand-mini {
+            display: block;
+          }
+        }
+      }
+
+      .sidebar-header {
+        strong {
+          display: none;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important;
+
+        &.active {
+          margin-left: 0;
+        }
+
+        .sidebar-header .sidebar-brand-mini {
+          display: none;
+        }
+
+        &.active {
+          .sidebar-header {
+            .sidebar-brand {
+              display: none;
+            }
+            .sidebar-brand-mini {
+              display: block;
+            }
+          }
+          ul {
+            li a {
+              padding: 20px 10px;
+              font-size: 0.85em;
+              i {
+                margin-right: 0;
+                display: block;
+                font-size: 1.8em;
+                margin-bottom: 5px;
+              }
+            }
+            ul a {
+              padding: 10px !important;
+            }
+          }
+          a {
+            &[aria-expanded="false"]::before, &[aria-expanded="true"]::before {
+              top: auto;
+              bottom: 5px;
+              right: 50%;
+              transform: translateX(50%);
+            }
+          }
+        }
+      }
+    }
+}

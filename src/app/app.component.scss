@@ -1,0 +1,54 @@
+// Bootstrap
+//@import url('/node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// import
+@import '../styles/colors';
+@import '../styles/mixins';
+@import '../styles/navbar';
+@import '../styles/sidebar';
+@import '../styles/content';
+
+// Font Variables
+$roboto: 'Roboto', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+body,
+html {
+  min-height: 100%;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  font-family: $roboto;
+}
+
+body {
+  background-color: $background-color;
+
+  sun-app {
+    min-height: 100%;
+		height: 100%;
+		padding: 0;
+		width: 100%;
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      align-items: stretch;
+      width: 1280px;
+      margin: auto;
+
+      ul, li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .clearleft {
+        clear: left;
+      }
+    }
+  }
+}

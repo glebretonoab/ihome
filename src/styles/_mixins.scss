@@ -1,0 +1,20 @@
+// _mixins.scss
+
+@mixin circle($size: 100px) {
+	width: $size;
+	height: $size;
+  position: relative;
+
+	-webkit-border-radius: $size / 2 + 0px;
+	-moz-border-radius: $size / 2 + 0px;
+	border-radius: $size / 2 + 0px;
+
+  & > div, span {
+    width: $size - $size*0.3;
+    height: $size - $size*0.3;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    text-align: center;
+  }
+}
