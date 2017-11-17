@@ -6,6 +6,7 @@ import { MaterialModule } from './modules/material.module';
 
 // Plugins
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 // Configuration
 import { Configuration } from './app.configuration';
@@ -22,7 +23,8 @@ import { AppComponent } from './app.component';
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true }),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule.forRoot()
   ],
   declarations: [
     AppComponent
