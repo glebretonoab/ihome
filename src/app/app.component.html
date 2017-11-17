@@ -1,82 +1,173 @@
-<div class="wrapper">
-    <nav id="sidebar" [ngClass]="{'active': isActiveSidebar }">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header">
-            <div class="sidebar-brand"></div>
-            <div class="sidebar-brand-mini"></div>
-        </div>
-
-        <!-- Sidebar Links -->
-        <div class="collapse-link">
-          <span *ngIf="!isActiveSidebar">Customer areaaa</span>
-          <a (click)="isActiveSidebar = !isActiveSidebar;">
-            <i class="material-icons" *ngIf="!isActiveSidebar">chevron_left</i>
-            <i class="material-icons" *ngIf="isActiveSidebar">chevron_right</i>
-          </a>
-        </div>
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu">
-                    <i class="material-icons">event_note</i>
-                    <span>Your studies</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="material-icons">person</i>
-                    <span>Personal informations</span>
-                </a>
-                <a href="#pageSubmenu">
-                    <i class="material-icons">help_outline</i>
-                    <span>Need help ?</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <div id="content">
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-
-              <div class="navbar-header">
-                <div class="studies-list" *ngIf="studies">
-                  <div class="icon">
-                    <i class="material-icons">event_note</i>
-                  </div>
-                  <select class="form-control" (change)="studyChanged($event.target.value)">
-                    <option *ngFor="let study of studies"
-                      [value]="study.id"
-                      [attr.selected]="studyId==study.id ? true : null">
-                      {{study.title}}
-                    </option>
-                  </select>
-                  <button type="button" class="valid">
-                    <i class="material-icons">done</i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li>
-                        <button type="button" class="btn btn-default new-study">New study<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></button>
-                      </li>
-                      <li><a href="#"><i class="material-icons">event_note</i></a></li>
-                      <li><a href="#"><i class="material-icons">person_outline</i></a></li>
-                      <li><a href="#"><i class="material-icons">help_outline</i></a></li>
-                      <li>
-                        <div class="person">
-                          <span>User</span>
-                          <div class="person-thumbnail">
-                            <i class="material-icons">person</i>
-                          </div>
-                        </div>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-
-      <router-outlet></router-outlet>
+<div class="header">
+  <mat-toolbar color="primary">
+    <div class="icon">
+      <span>Dashboard</span>
     </div>
+    <!--<button class="menu" mat-icon-button [mat-menu-trigger-for]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>-->
+  </mat-toolbar>
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item>Option 1</button>
+    <button mat-menu-item>Option 2</button>
+  </mat-menu>
+
+  <!--<span class="done">
+    <button mat-fab>
+      <mat-icon>check circle</mat-icon>
+    </button>
+  </span>-->
+</div>
+
+<div class="content" layout="row">
+  <div flex="50">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Corentin</mat-card-title>
+        <mat-card-subtitle>Menu de la cantine</mat-card-subtitle>
+      </mat-card-header>
+      <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
+      <mat-card-content _ngcontent-c14="" class="mat-card-content">
+        <button class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float="">
+            <span class="mat-button-wrapper">
+              <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
+            </span>
+            <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+            <div class="mat-button-focus-overlay"></div>
+          </button>
+        <p>Menu de la semaine : Du 13 au 17 nov. 2017</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div flex="50">
+    <mat-card class="mat-card">
+      <div _ngcontent-c14="" class="mr-1" fxlayout="row" fxlayoutalign="center center" style="box-sizing: border-box; max-height: 100%; display: flex; flex-direction: row; place-content: center; align-items: center;">
+        <mat-card-header _ngcontent-c14="" class="mt-0 mat-card-header"><img _ngcontent-c14="" class="mat-card-avatar" matcardavatar="" src="/src/images/avatar.jpg">
+          <div class="mat-card-header-text">
+            <mat-card-subtitle _ngcontent-c14="" class="mat-card-subtitle">Revenue &nbsp; <span _ngcontent-c14="" class="font-weight-bold mat-text-primary">+458,90</span></mat-card-subtitle>
+            <mat-card-title _ngcontent-c14="" class="mat-card-title">Gerald Morris</mat-card-title>
+          </div>
+        </mat-card-header>
+        <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+        <button _ngcontent-c14="" aria-haspopup="true" aria-label="Open card menu" class="mat-icon-button" mat-button-sm="" mat-icon-button=""><span class="mat-button-wrapper">
+          <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">more_vert</mat-icon>
+        </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+      </div>
+      <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
+      <mat-card-content _ngcontent-c14="" class="mat-card-content">
+        <button _ngcontent-c14="" class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float=""><span class="mat-button-wrapper"><mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+        <p _ngcontent-c14="" class="ma-0">Phileas Fogg and Aouda went on board, where they found Fix already installed. Below deck was a square cabin, of which the walls bulged out in the form of cots, above a circular divan; in the centre was a table provided with a swinging lamp.</p>
+      </mat-card-content>
+      <hr _ngcontent-c14="">
+      <mat-card-actions _ngcontent-c14="" class="mat-card-actions">
+        <div _ngcontent-c14="" fxlayout="row" style="display: flex; box-sizing: border-box; flex-direction: row;">
+          <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
+            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
+          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+          <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
+            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
+          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+          <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+          <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">More info</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+          <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">Download</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  <!--<mat-grid-list cols="2" rowHeight="350">
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Corentin</mat-card-title>
+          <mat-card-subtitle>Menu de la cantine</mat-card-subtitle>
+        </mat-card-header>
+        <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
+        <mat-card-content _ngcontent-c14="" class="mat-card-content">
+          <button class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float="">
+            <span class="mat-button-wrapper">
+              <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
+            </span>
+            <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
+            <div class="mat-button-focus-overlay"></div>
+          </button>
+          <p>Menu de la semaine : Du 13 au 17 nov. 2017</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="mat-card">
+        <div _ngcontent-c14="" class="mr-1" fxlayout="row" fxlayoutalign="center center" style="box-sizing: border-box; max-height: 100%; display: flex; flex-direction: row; place-content: center; align-items: center;">
+          <mat-card-header _ngcontent-c14="" class="mt-0 mat-card-header"><img _ngcontent-c14="" class="mat-card-avatar" matcardavatar="" src="/src/images/avatar.jpg">
+            <div class="mat-card-header-text">
+              <mat-card-subtitle _ngcontent-c14="" class="mat-card-subtitle">Revenue &nbsp; <span _ngcontent-c14="" class="font-weight-bold mat-text-primary">+458,90</span></mat-card-subtitle>
+              <mat-card-title _ngcontent-c14="" class="mat-card-title">Gerald Morris</mat-card-title>
+            </div>
+          </mat-card-header>
+          <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+          <button _ngcontent-c14="" aria-haspopup="true" aria-label="Open card menu" class="mat-icon-button" mat-button-sm="" mat-icon-button=""><span class="mat-button-wrapper">
+          <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">more_vert</mat-icon>
+        </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+        </div>
+        <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
+        <mat-card-content _ngcontent-c14="" class="mat-card-content">
+          <button _ngcontent-c14="" class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float=""><span class="mat-button-wrapper"><mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+          <p _ngcontent-c14="" class="ma-0">Phileas Fogg and Aouda went on board, where they found Fix already installed. Below deck was a square cabin, of which the walls bulged out in the form of cots, above a circular divan; in the centre was a table provided with a swinging lamp.</p>
+        </mat-card-content>
+        <hr _ngcontent-c14="">
+        <mat-card-actions _ngcontent-c14="" class="mat-card-actions">
+          <div _ngcontent-c14="" fxlayout="row" style="display: flex; box-sizing: border-box; flex-direction: row;">
+            <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
+            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
+          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+            <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
+            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
+          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+            <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+            <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">More info</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+            <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">Download</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>-->
 </div>

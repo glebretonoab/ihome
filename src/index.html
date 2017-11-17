@@ -2,12 +2,22 @@
 <html>
   <head>
     <base href="/">
-    <title>Sun</title>
+    <title>Ihome - Home dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/src/styles/loading.css" type="text/css" />
   </head>
-  <body>
-    <sun-app>Loading...</sun-app>
+  <body class="my-theme">
+    <ihome-app></ihome-app>
+    <div class="loading">
+      <div class="visual">
+        <div class="icon"></div>
+        <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

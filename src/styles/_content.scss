@@ -1,8 +1,25 @@
-// _navbar.scss
+// _content.scss
+ihome-app {
 
-sun-app {
-  #content {
-    background-color: $third-color;
-    width: 100%;
-  }
+    // Content
+    .content {
+        .mat-grid-tile {
+            .mat-figure {
+                align-items: normal;
+
+                .mat-card {
+                    margin: 5%;
+                    padding: 0;
+
+                    .card-image-header {
+                        position: relative;
+                        background-size: cover;
+                        background-position: bottom;
+                        background-repeat: no-repat;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }

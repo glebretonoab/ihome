@@ -1,0 +1,30 @@
+// _content.scss
+ihome-app {
+
+    // Header
+    .header {
+        mat-toolbar {
+            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
+
+            .icon {
+                background: transparent url('../images/spinner_icon.png') no-repeat;
+                background-size: 100%;
+                width: 40px;
+                height: 40px;
+
+                span {
+                    padding-left: 54px;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+            }
+
+            button.menu {
+                float: right;
+                -webkit-animation-delay: 5s;
+                animation-delay: 5s;
+            }
+        }
+    }
+}
