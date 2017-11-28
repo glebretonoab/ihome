@@ -5,6 +5,7 @@ const app = express();
 
 var config = require('../config/webpack.prod.js');
 var port = process.env.PORT || 8080;
+app.set("port", port);
 
 webpack(config, function(err, stats) {
   if (err) throw err
@@ -12,9 +13,5 @@ webpack(config, function(err, stats) {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
-  
-  /*app.listen(port, (err) => {
-    // eslint-disable-next-line no-console
-    console.info(`Listening on port ${port}. Open up http://localhost:${port}/ in your browser.`);
-  });*/
+  app.listen(port, () => console.log('Listening on port ' + port + ' !'));
 })
