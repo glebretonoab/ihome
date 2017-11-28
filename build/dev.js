@@ -1,9 +1,9 @@
 var webpack = require('webpack')
 var config = require('../config/webpack.dev.js')
 var webpackDevServer = require('webpack-dev-server')
-var port = 8080;
+var port = process.env.PORT || 8080;
 config.entry.app.unshift(
-  "webpack-dev-server/client?http://" + process.env.IP + ":" + process.env.PORT + "/",
+  "webpack-dev-server/client?http://localhost:" + port + "/",
   "webpack/hot/dev-server"
 )
 
