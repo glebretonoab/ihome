@@ -9,9 +9,11 @@ app.set("port", port);
 
 webpack(config, function(err, stats) {
   if (err) throw err
-  app.use(express.static(path.join(__dirname, '/../dist')));
+  
+  var appPath = path.join(__dirname, '/../dist');
+  app.use(express.static(appPath));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(appPath, '/index.html'));
   });
   app.listen(port, () => console.log('Listening on port ' + port + ' !'));
 })
