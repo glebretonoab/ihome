@@ -4,10 +4,6 @@ var webpackDevServer = require('webpack-dev-server')
 var port = process.env.PORT || 8080;
 var server_url = 'http://localhost';
 
-if (process.env.HEROKU_APP_NAME) {
-    server_url = "https://" + process.env.HEROKU_APP_NAME + ".herokuapp.com";
-}
-
 config.entry.app.unshift(
   "webpack-dev-server/client?" + server_url + ':' + port,
   "webpack/hot/dev-server"
