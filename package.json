@@ -2,6 +2,7 @@
   "name": "ihome",
   "version": "1.0.0",
   "description": "IHOME",
+  "main": "build/dev.js",
   "scripts": {
     "start": "node build/dev.js --NODE_ENV=dev",
     "test": "karma start",
