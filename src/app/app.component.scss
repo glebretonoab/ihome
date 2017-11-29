@@ -12,14 +12,18 @@
 @import '../styles/colors';
 @import '../styles/mat-theme';
 /*@import '../styles/mixins';
-@import '../styles/navbar';
-@import '../styles/sidebar';*/
+@import '../styles/navbar';*/
+@import '../styles/sidenav';
 @import '../styles/header';
 @import '../styles/content';
 
 // Font Variables
 $roboto: 'Roboto', sans-serif;
 $open-sans: 'Open Sans', sans-serif;
+
+html {
+  font-size: 13px !important;
+}
 
 body,
 html {
@@ -29,6 +33,11 @@ html {
   margin: 0;
   width: 100%;
   font-family: $roboto;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #707070;
+  text-align: left;
 }
 
 body {
@@ -38,5 +47,9 @@ body {
   &.my-theme {
     // use our theme with angular-material-theme mixin
     @include angular-material-theme($my-theme);
+  }
+
+  .mat-sidenav-container {
+    background-color:  transparent !important;
   }
 }

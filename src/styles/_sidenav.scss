@@ -1,0 +1,44 @@
+// _sidenav.scss
+ihome-app {
+  .mat-sidenav {
+    padding: 102px 2rem 0.5rem 2rem;
+    background-color: transparent !important;
+    width: 270px;
+
+    .mat-card {
+      background-color: rgba(0, 0, 0, 0.03) !important;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0.8rem;
+      border-radius: 2px;
+      transition: background-color 300ms;
+      box-shadow: none;
+
+      .avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-right: 0.8rem;
+      }
+
+      .name {
+        color: #333;
+        font-weight: 500;
+      }
+
+      .email {
+        color: #969696;
+      }
+    }
+  }
+}

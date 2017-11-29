@@ -1,125 +1,105 @@
-<div class="header">
-  <mat-toolbar color="primary">
-    <div class="icon">
-      <span>Dashboard</span>
-    </div>
-    <!--<button class="menu" mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>-->
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Option 1</button>
-    <button mat-menu-item>Option 2</button>
-  </mat-menu>
+<!--
+  http://wrapbootstrap.com/preview/WB0L7L747
 
-  <!--<span class="done">
-    <button mat-fab>
-      <mat-icon>check circle</mat-icon>
-    </button>
-  </span>-->
-</div>
+  http://byrushan.com/projects/material-admin/app/2.1/angular4/#/home
+  -->
 
-<div class="content">
-  <div fxlayout="row" fxlayoutwrap="wrap" style="display: flex; box-sizing: border-box; flex-flow: row wrap;">
-    <div fxflex="100" fxflex.gt-md="50" style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">ss</div>
-    <div fxflex="100" fxflex.gt-md="50" style="flex: 1 1 50%; box-sizing: border-box; max-width: 50%;">ss</div>
+
+<mat-toolbar color="primary" class="header">
+  <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="icon">
+    <span>IHome</span>
   </div>
-  
-  
-  <!--<mat-grid-list cols="2" rowHeight="350">
-    <mat-grid-tile>
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Corentin</mat-card-title>
-          <mat-card-subtitle>Menu de la cantine</mat-card-subtitle>
-        </mat-card-header>
-        <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
-        <mat-card-content _ngcontent-c14="" class="mat-card-content">
-          <button class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float="">
-            <span class="mat-button-wrapper">
-              <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
-            </span>
-            <div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div>
-            <div class="mat-button-focus-overlay"></div>
-          </button>
-          <p>Menu de la semaine : Du 13 au 17 nov. 2017</p>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card _ngcontent-c14="" class="mat-card">
-        <div _ngcontent-c14="" class="mr-1" fxlayout="row" fxlayoutalign="center center" style="box-sizing: border-box; max-height: 100%; display: flex; flex-direction: row; place-content: center; align-items: center;">
-          <mat-card-header _ngcontent-c14="" class="mt-0 mat-card-header"><img _ngcontent-c14="" class="mat-card-avatar" matcardavatar="" src="/src/images/avatar.jpg">
-            <div class="mat-card-header-text">
-              <mat-card-subtitle _ngcontent-c14="" class="mat-card-subtitle">Revenue &nbsp; <span _ngcontent-c14="" class="font-weight-bold mat-text-primary">+458,90</span></mat-card-subtitle>
-              <mat-card-title _ngcontent-c14="" class="mat-card-title">Gerald Morris</mat-card-title>
-            </div>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" opened="true" class="sidenav"
+    [fixedInViewport]="true" 
+    [fixedTopGap]="0"
+    [fixedBottomGap]="0">
 
+    <mat-card class="user_info">
+      <img class="avatar" alt="" src="../images/avatar/avatar_8.jpg">
+      <div class="ng-tns-c1-0">
+          <div class="name">Gaetan LEBRETON</div>
+          <div class="email">lebreton.gaetan@gmail.com</div>
+      </div>
+    </mat-card>
 
+  </mat-sidenav>
 
-          </mat-card-header>
-          <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
-          <button _ngcontent-c14="" aria-haspopup="true" aria-label="Open card menu" class="mat-icon-button" mat-button-sm="" mat-icon-button=""><span class="mat-button-wrapper">
-          <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">more_vert</mat-icon>
-        </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
+  <mat-sidenav-content>
+    <section class="content_cards">
+      <div class="container"
+          fxLayout
+          fxLayout.xs="column"
+          fxLayoutAlign="center"
+          fxLayoutGap="10px"
+          fxLayoutGap.xs="0">
+        <div class="item item-1" fxFlex="33%">
+          <!--<button mat-button (click)="sidenav.toggle()">Toggle</button>-->
+          <mat-card class="school-menu-card">
+            <mat-card-header>
+              <mat-card-title>Menu de la semaine</mat-card-title>
+              <mat-card-subtitle>Ecole de Saint Jean ur Vilaine</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
         </div>
-        <div _ngcontent-c14="" class="card-image-header" style="background-image: url(/src/images/menu-cantine.jpg); height: 240px;"></div>
-        <mat-card-content _ngcontent-c14="" class="mat-card-content">
-          <button _ngcontent-c14="" class="mr-1 mat-fab mat-warn" color="warn" mat-fab="" mat-fab-card-float=""><span class="mat-button-wrapper"><mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon></span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
-          <p _ngcontent-c14="" class="ma-0">Phileas Fogg and Aouda went on board, where they found Fix already installed. Below deck was a square cabin, of which the walls bulged out in the form of cots, above a circular divan; in the centre was a table provided with a swinging lamp.</p>
-        </mat-card-content>
-        <hr _ngcontent-c14="">
-        <mat-card-actions _ngcontent-c14="" class="mat-card-actions">
-          <div _ngcontent-c14="" fxlayout="row" style="display: flex; box-sizing: border-box; flex-direction: row;">
-            <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
-            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">share</mat-icon>
-          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
-            <button _ngcontent-c14="" class="mat-icon-button" mat-icon-button=""><span class="mat-button-wrapper">
-            <mat-icon _ngcontent-c14="" class="mat-icon material-icons" role="img" aria-hidden="true">favorite</mat-icon>
-          </span><div class="mat-button-ripple mat-ripple mat-button-ripple-round" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
-            <span _ngcontent-c14="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
-            <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">More info</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
-            <button _ngcontent-c14="" class="mat-button" mat-button=""><span class="mat-button-wrapper">Download</span><div class="mat-button-ripple mat-ripple" matripple=""></div><div class="mat-button-focus-overlay"></div></button>
-          </div>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>-->
-</div>
+        <div class="item item-2" fxFlex="33%">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="item item-3" fxFlex>
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>
