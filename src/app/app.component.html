@@ -39,7 +39,23 @@
           fxLayoutGap.xs="0">
         <div class="item item-1" fxFlex="33%">
           <!--<button mat-button (click)="sidenav.toggle()">Toggle</button>-->
-          <menucard></menucard>
+          <mat-card class="school-menu-card">
+            <mat-card-header>
+              <mat-card-title>Menu de la semaine</mat-card-title>
+              <mat-card-subtitle>Ecole de Saint Jean sur Vilaine</mat-card-subtitle>
+              <button mat-fab class="btn-float">
+                <mat-icon>visibility</mat-icon>
+              </button>
+            </mat-card-header>
+            <mat-card-content>
+              <p>Semaine du .. au .. décembre 2017</p>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+          </mat-card>
         </div>
         <div class="item item-2" fxFlex="33%"></div>
         <div class="item item-3" fxFlex></div>
