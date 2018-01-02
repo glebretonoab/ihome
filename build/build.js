@@ -10,7 +10,7 @@ app.set("port", port);
 webpack(config, function(err, stats) {
   if (err) throw err
   
-  var appPath = path.join(__dirname, '/../dist');  
+  var appPath = path.join(__dirname, '/../../dist');  
   console.log('dirName =  ' + __dirname);
   console.log('appPath =  ' + appPath);
   app.use(express.static(appPath));
