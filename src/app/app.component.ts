@@ -1,6 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-//import { DataService } from './services/data.service';
 
 @Component({
   selector: 'ihome-app',

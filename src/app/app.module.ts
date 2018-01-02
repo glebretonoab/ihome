@@ -16,6 +16,7 @@ import { ROUTES } from './app.routes';
 
 // Components
 import { AppComponent } from './app.component';
+import { MenucardComponent } from './components/menucard/menucard.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { AppComponent } from './app.component';
     FlexLayoutModule
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    MenucardComponent
   ],
   providers: [
     Configuration
