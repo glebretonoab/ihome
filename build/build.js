@@ -10,7 +10,9 @@ app.set("port", port);
 webpack(config, function(err, stats) {
   if (err) throw err
   
-  var appPath = path.join(__dirname, '/../dist');
+  var appPath = path.join(__dirname, '/../dist');  
+  console.log('dirName =  ' + __dirname);
+  console.log('appPath =  ' + appPath);
   app.use(express.static(appPath));
   app.get('*', (req, res) => {
     res.sendFile(path.join(appPath, '/index.html'));
